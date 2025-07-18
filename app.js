@@ -59,7 +59,7 @@ bot.on('message', async (msg) => {
   const text = msg.text.trim();
   let result = text.split(' ');
   const sem = ['SEM1', 'SEM2', 'SEM3', 'SEM4', 'SEM5', 'SEM6', 'SEM7', 'SEM8'].includes(result[0]?.toUpperCase()) ? result[0]?.toUpperCase() : null;
-  const course = ['B.TECH', 'BCA'].includes(result[1]?.toUpperCase()) ? result[1]?.toUpperCase() : null;
+  const course = ['B.TECH', 'BCA','M.TECH'].includes(result[1]?.toUpperCase()) ? result[1]?.toUpperCase() : null;
 
   console.log(sem,course);
   
@@ -71,7 +71,7 @@ bot.on('message', async (msg) => {
     userStates.set(chatId, 'collecting_info');
     isEnrolled.set(chatId, false);
       bot.sendMessage(chatId, `👤 used by ${count} users`);
-    bot.sendMessage(chatId, '👋 Welcome! Which semester/Course are you in? (e.g., sem1 BCA, sem2 B.TECH )\nWhen done, type /done.');
+    bot.sendMessage(chatId, '👋 Welcome! Which semester/Course are you in? (e.g., sem1 BCA, sem2 B.TECH, sem1 M.TECH )\nWhen done, type /done.');
     return;
   }
 
